@@ -5,12 +5,15 @@
     align-items: center;
     padding: 40px;
     color: var(--light-text);
-    background-color:blueviolet;
   height: 20vh;
+  background-size: cover;
+  background-image: url(../../images/bg-desktop-light.jpg);
+  width: 93%;
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin: 0;
+      margin: 0 auto;
+      
     }
   
     .theme-toggle {
@@ -19,10 +22,11 @@
       cursor: pointer;
       font-size: larger;
       border-radius: 3px;
+      
   
       img {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
       }
     }
   }

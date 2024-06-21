@@ -3,6 +3,8 @@ import React from 'react';
 import './Header.scss';
 import sun from '../../images/icon-sun.svg'
 import moon from '../../images/icon-moon.svg'
+// import backgroundImage from '../../images/bg-desktop-dark'
+// import backgroundImage from '../../images/bg-desktop-light'
 
 const Header = ({ toggleTheme, isDarkMode }) => {
   return (
