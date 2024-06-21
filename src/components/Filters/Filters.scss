@@ -1,0 +1,18 @@
+// src/components/Filters/Filters.scss
+.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--text-color);
+    
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: inherit;
+        &.active {
+            color: var(--primary-bright-blue);
+        }
+    }
+}

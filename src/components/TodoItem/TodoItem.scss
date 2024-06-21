@@ -1,0 +1,33 @@
+// src/components/TodoItem/TodoItem.scss
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--text-color);
+    cursor: pointer;
+
+    .todo-item-text {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        span {
+            margin-left: 0.5rem;
+        }
+    }
+
+    .completed .todo-item-text span {
+        text-decoration: line-through;
+        color: var(--light-grayish-blue);
+    }
+
+    .delete-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
