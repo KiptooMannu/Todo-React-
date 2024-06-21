@@ -3,23 +3,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid var(--light-grayish-blue);
-    cursor: pointer;
-
-    &.completed {
-        text-decoration: line-through;
-        color: var(--dark-grayish-blue);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--light-border);
+    background: var(--light-input-bg);
+    color: var(--light-text);
+  
+    input[type='checkbox'] {
+      margin-right: 1rem;
     }
-
-    div {
-        flex: 1;
-    }
-
+  
     button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--dark-grayish-blue);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: red;
+  
+      &:hover {
+        text-decoration: underline;
+      }
     }
-}
+  
+    &.completed span {
+      text-decoration: line-through;
+      color: var(--light-hover);
+    }
+  }
+  
+  body.dark-mode .todo-item {
+    border-bottom: 1px solid var(--dark-border);
+    background: var(--dark-input-bg);
+    color: var(--dark-text);
+  
+    &.completed span {
+      color: var(--dark-hover);
+    }
+  }
+  

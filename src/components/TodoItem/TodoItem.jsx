@@ -6,20 +6,19 @@ import './TodoItem.scss';
 const TodoItem = ({ todo }) => {
     const { dispatch } = useTodos();
 
-    const toggleTodo = () => {
-        dispatch({ type: 'TOGGLE_TODO', payload: todo.id });
-    };
-
-    const removeTodo = () => {
-        dispatch({ type: 'REMOVE_TODO', payload: todo.id });
+    const handleDelete = () => {
+        dispatch({ type: 'DELETE_TODO', payload: { id: todo.id } });
     };
 
     return (
         <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-            <div onClick={toggleTodo}>
-                {todo.text}
-            </div>
-            <button onClick={removeTodo}>Delete</button>
+            <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => dispatch({ type: 'TOGGLE_TODO', payload: { id: todo.id } })}
+            />
+            <span>{todo.text}</span>
+            <button onClick={handleDelete}>Delete</button>
         </li>
     );
 };

@@ -2,41 +2,64 @@
 .todo-input {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--light-input-bg);
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(211, 209, 209, 0.1);
     margin-bottom: 1rem;
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-top: -10px;
 
+  
     input {
-        flex: 1;
-        padding: 0.75rem;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        background: none;
-        color: var(--text-color);
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 400;
+      flex: 1;
+      padding: 0.5rem;
+      outline: none;
+      font-size: 2rem;
+      background: none;
+      color: var(--light-text);
+      margin: -10px;
+      border: none;
+  
+      &::placeholder {
+        color: var(--light-hover);
+      }
     }
-
-    input::placeholder {
-        color: var(--text-color-light);
-    }
-
-    input:focus {
-        border-bottom: 2px solid var(--primary-bright-blue);
-    }
-
+  
     button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-        color: var(--primary-bright-blue);
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 700;
-        margin-left: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--light-button);
+  
+      &:hover {
+        color: var(--light-hover);
+      }
     }
-}
+  }
+  
+  body.dark-mode .todo-input {
+    background: var(--dark-input-bg);
+  
+    input {
+      color: white;
+     
+  
+      &::placeholder {
+  
+        background-color: aliceblue;
+      }
+    }
+  
+    button {
+      color: var(--dark-button);
+  
+      &:hover {
+        color: var(--dark-hover);
+      }
+    }
+  }
+  
