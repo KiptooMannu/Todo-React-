@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import TodoInput from './components/TodoInput/TodoInput';
-import TodoList from './components/TodoList/TodoList';
+// import TodoList from './components/TodoList/TodoList';
 import { TodoProvider } from './contexts/TodoContext';
 import './App.scss';
 
@@ -18,7 +18,7 @@ const App = () => {
             <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
                 <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
                 <TodoInput />
-                <TodoList />
+                {/* <TodoList /> */}
             </div>
         </TodoProvider>
     );
