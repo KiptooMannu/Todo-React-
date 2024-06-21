@@ -10,19 +10,16 @@ const TodoItem = ({ todo }) => {
         dispatch({ type: 'TOGGLE_TODO', payload: todo.id });
     };
 
-    const deleteTodo = () => {
-        dispatch({ type: 'DELETE_TODO', payload: todo.id });
+    const removeTodo = () => {
+        dispatch({ type: 'REMOVE_TODO', payload: todo.id });
     };
 
     return (
         <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-            <div className="todo-item-text" onClick={toggleTodo}>
-                <input type="checkbox" checked={todo.completed} readOnly />
-                <span>{todo.text}</span>
+            <div onClick={toggleTodo}>
+                {todo.text}
             </div>
-            <button className="delete-button" onClick={deleteTodo}>
-                <img src="/assets/icon-cross.svg" alt="Delete" />
-            </button>
+            <button onClick={removeTodo}>Delete</button>
         </li>
     );
 };

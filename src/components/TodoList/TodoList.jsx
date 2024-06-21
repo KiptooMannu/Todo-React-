@@ -9,9 +9,6 @@ const TodoList = () => {
     const { todos, dispatch } = useTodos();
     const [filter, setFilter] = useState('All');
 
-    // Debugging logs
-    console.log('Todos:', todos);
-
     const filteredTodos = todos.filter(todo => {
         if (filter === 'Active') return !todo.completed;
         if (filter === 'Completed') return todo.completed;

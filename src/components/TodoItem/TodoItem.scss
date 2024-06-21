@@ -3,31 +3,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--text-color);
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-grayish-blue);
     cursor: pointer;
 
-    .todo-item-text {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        span {
-            margin-left: 0.5rem;
-        }
-    }
-
-    .completed .todo-item-text span {
+    &.completed {
         text-decoration: line-through;
-        color: var(--light-grayish-blue);
+        color: var(--dark-grayish-blue);
     }
 
-    .delete-button {
+    div {
+        flex: 1;
+    }
+
+    button {
         background: none;
         border: none;
         cursor: pointer;
-        img {
-            width: 18px;
-            height: 18px;
-        }
+        color: var(--dark-grayish-blue);
     }
 }

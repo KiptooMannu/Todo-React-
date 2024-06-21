@@ -1,34 +1,46 @@
 // src/App.scss
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
+:root {
+    --primary-bright-blue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue-dark: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue-dark: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue-dark-2: hsl(237, 14%, 26%);
+}
 
 body {
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-grayish-blue);
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.3s;
 }
 
 .app {
-    width: 100%;
-    max-width: 500px;
+    padding: 2rem;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
 }
 
 .dark-mode {
-    --bg-color: hsl(235, 21%, 11%);
-    --text-color: hsl(234, 39%, 85%);
+    background-color: var(--very-dark-blue);
+    color: var(--light-grayish-blue-dark);
 }
 
 .light-mode {
-    --bg-color: hsl(0, 0%, 98%);
-    --text-color: hsl(235, 19%, 35%);
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-grayish-blue);
 }

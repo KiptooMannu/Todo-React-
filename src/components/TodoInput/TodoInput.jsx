@@ -23,7 +23,6 @@ const TodoInput = () => {
                 placeholder="Create a new todo..."
                 onKeyDown={(e) => e.key === 'Enter' && addTodo()}
             />
-            <button onClick={addTodo}>Add</button>
         </div>
     );
 };
