@@ -1,12 +1,12 @@
-// // src/components/TodoList/TodoList.scss
-// .todo-list-container {
-//     background: var(--bg-color);
-//     border-radius: 10px;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-// }
+// src/components/TodoList/TodoList.scss
+.todo-list-container {
+    background: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-// .todo-list {
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
-// }
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

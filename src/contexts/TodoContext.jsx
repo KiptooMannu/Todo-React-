@@ -1,50 +1,54 @@
 // src/contexts/TodoContext.jsx
-import React, { createContext, useReducer, useContext, useEffect } from 'react';
-import useLocalStorage from '../hooks/uselocalStorage';
+import React, { createContext, useReducer, useContext } from 'react';
 
-const TodoContext = createContext();
+// Define initial state
+const initialState = {
+    todos: [], // Ensure this is an array
+};
 
+// Reducer function to manage state updates
 const todoReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            return [...state, action.payload];
+            return {
+                ...state,
+                todos: [...state.todos, action.payload],
+            };
+        case 'REMOVE_TODO':
+            return {
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== action.payload),
+            };
         case 'TOGGLE_TODO':
-            return state.map(todo =>
-                todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
-            );
-        case 'DELETE_TODO':
-            return state.filter(todo => todo.id !== action.payload);
+            return {
+                ...state,
+                todos: state.todos.map(todo =>
+                    todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
+                ),
+            };
         case 'CLEAR_COMPLETED':
-            return state.filter(todo => !todo.completed);
+            return {
+                ...state,
+                todos: state.todos.filter(todo => !todo.completed),
+            };
         default:
             return state;
     }
 };
 
+// Create context
+const TodoContext = createContext();
+
+// Provider component
 export const TodoProvider = ({ children }) => {
-    const [storedTodos, setStoredTodos] = useLocalStorage('todos', []);
-    const [state, dispatch] = useReducer(todoReducer, storedTodos);
-
-    useEffect(() => {
-        setStoredTodos(state);
-    }, [state, setStoredTodos]);
-
-    // Add default todos on first render
-    useEffect(() => {
-        if (state.length === 0) {
-            dispatch({ type: 'ADD_TODO', payload: { id: 1, text: 'Jog around the park 3x', completed: false } });
-            dispatch({ type: 'ADD_TODO', payload: { id: 2, text: '10 minutes meditation', completed: false } });
-            dispatch({ type: 'ADD_TODO', payload: { id: 3, text: 'Read for 1 hour', completed: false } });
-            dispatch({ type: 'ADD_TODO', payload: { id: 4, text: 'Pick up groceries', completed: false } });
-            dispatch({ type: 'ADD_TODO', payload: { id: 5, text: 'Complete Todo App on Frontend Mentor', completed: false } });
-        }
-    }, [state.length]);
+    const [state, dispatch] = useReducer(todoReducer, initialState);
 
     return (
-        <TodoContext.Provider value={{ todos: state, dispatch }}>
+        <TodoContext.Provider value={{ todos: state.todos, dispatch }}>
             {children}
         </TodoContext.Provider>
     );
 };
 
+// Custom hook to use the TodoContext
 export const useTodos = () => useContext(TodoContext);
