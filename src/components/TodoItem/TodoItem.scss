@@ -1,41 +1,38 @@
 // src/components/TodoItem/TodoItem.scss
+
 .todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--light-border);
-    background: var(--light-input-bg);
-    color: var(--light-text);
-  
-    input[type='checkbox'] {
-      margin-right: 1rem;
-    }
-  
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: red;
-  
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  
-    &.completed span {
-      text-decoration: line-through;
-      color: var(--light-hover);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  input[type="checkbox"] {
+    margin-right: 1rem;
+  }
+
+  .todo-text {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+  .delete-button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+
+    &:hover {
+      color: darkred;
     }
   }
-  
-  body.dark-mode .todo-item {
-    border-bottom: 1px solid var(--dark-border);
-    background: var(--dark-input-bg);
-    color: var(--dark-text);
-  
-    &.completed span {
-      color: var(--dark-hover);
-    }
-  }
-  
+}
